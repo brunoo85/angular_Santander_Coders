@@ -1,0 +1,56 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+h2{
+     margin-bottom: 10px;
+     margin-left: 5px;
+}
+
+section{
+     background-color: #E82135;
+     margin: 8px;
+     font-weight: bold;
+}
+
+.container{
+     margin: 0 10px;
+     display: flex;
+     justify-content: space-around;
+
+     .containerAux{
+          background-color: #00FFC5;
+          min-width: 140px;
+          padding: 10px;
+          border-radius: 15px;
+
+          .listTasks{
+               padding: 0 2px;
+          }
+
+          .task{
+               background-color: #F5CDA7;
+               margin: 5px 0px;
+               border: 1px black solid;
+               padding: 8px;
+               border-radius: 10px;
+          }
+     }
+}
+
+button{
+     margin-top: 10px;
+     width: 180px;
+     font-size: 18px;
+     padding: 5px;
+     margin-bottom: 10px;
+     background-color: #44CCFF;
+     border: 2px solid black;
+     border-radius: 20px;
+     font-weight: bold;
+}
+
+
+

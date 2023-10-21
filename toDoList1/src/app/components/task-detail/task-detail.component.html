@@ -1,0 +1,10 @@
+<section>
+     <h2>Detalhes da Tarefa</h2>
+
+     <p>Titulo : {{ task.title }}</p>
+     <p>Descrição {{ task.description }}</p>
+     <p>Data de vencimento: {{ task.date | date : "dd/MM/yyyy" }}</p>
+     <p>Status: {{ task.status }}</p>
+
+     <button (click)="close()">Fechar</button>
+</section>
