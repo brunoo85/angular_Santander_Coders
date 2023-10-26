@@ -1,30 +1,30 @@
 <section>
      <h2>Criar nova Tarefa</h2>
-     <form (ngSubmit)="submitTask()">
+     <form [formGroup]="formTask">
           <div class="divInput">
                <label for="title">Título</label>
-               <input id="title" type="text" name="title" [(ngModel)] = "newTask.title">
+               <input id="title" type="text" name="title" formControlName="title">
           </div>
 
           <div class="divInput">
                <label for="description">Descrição</label>
-               <input id="description" type="text" name="description" [(ngModel)] = "newTask.description">
+               <input id="description" type="text" name="description">
           </div>
 
           <div class="divInput">
                <label for="date">Data de vencimento</label>
-               <input id="date" type="date" name="date" [(ngModel)] = "newTask.date">
+               <input id="date" type="date" name="date">
           </div>
 
           <div class="divInput">
                <label for="status">Status</label>
-               <select name="status" id="status" [(ngModel)]="newTask.status">
+               <select name="status" id="status">
                     <option value="toDo">ToDo</option>
                     <option value="trabalhando">Trabalhando</option>
                     <option value="finalizado">Finalizado</option>
                </select>
           </div>
 
-          <button type="submit">Adicionar Tarefa</button>
+          <button type="button" (click)="submitTask()">Adicionar Tarefa</button>
      </form>
 </section>

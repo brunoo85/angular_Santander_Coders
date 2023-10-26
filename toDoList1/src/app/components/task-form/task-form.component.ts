@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Task } from 'src/models/task.model';
 
 @Component({
@@ -8,12 +9,21 @@ import { Task } from 'src/models/task.model';
 })
 export class TaskFormComponent {
 
+  public formTask: FormGroup = this.formBuilder.group({
+    title: ['',Validators.required],
+    description: ['',Validators.required],
+    date: ['',Validators.required],
+    status: ['toDo',Validators.required],
+    
+  })
+
   @Output() addTask = new EventEmitter();
 
-  public newTask = new Task();
+  constructor(private formBuilder: FormBuilder){}
 
   submitTask(){
-    this.addTask.emit(this.newTask);
-    this.newTask = new Task();
+    console.log(this.formTask.value);
+    // this.addTask.emit(this.newTask);
+    // this.newTask = new Task();
   }
 }

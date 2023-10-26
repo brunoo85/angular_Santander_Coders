@@ -2,13 +2,14 @@
      <h2>Tarefas</h2>
      
      <section class="container"  >
-          <div class="containerAux">
+          <!-- <div class="containerAux">
                <h2>ToDo</h2>
                <div class="listTasks" *ngFor="let task of tasksFiltradas">
                     <div class="task" *ngIf="task.status === 'toDo'">
                          Titulo: {{ task.title }}<br>
                          Data de vencimento: {{ task.date | date:"dd/MM/yyyy" }} <br>
                          Descrição: {{ task.description | uppercase | slice: 0:5 }}
+                         <button (click)="selectedTask(task)"> Ver detalhes </button>
                     </div>
                </div>
           </div>
@@ -20,6 +21,7 @@
                          Titulo: {{ task.title }}<br>
                          Data de vencimento: {{ task.date | date:"dd/MM/yyyy" }} <br>
                          Descrição: {{ task.description | uppercase | slice: 0:5 }}
+                         <button (click)="selectedTask(task)"> Ver detalhes </button>
                     </div>
                </div>
           </div>
@@ -31,8 +33,21 @@
                          Titulo: {{ task.title }}<br>
                          Data de vencimento: {{ task.date | date:"dd/MM/yyyy" }} <br>
                          Descrição: {{ task.description | uppercase | slice: 0:5 }}
+                         <button (click)="selectedTask(task)"> Ver detalhes </button>
                     </div>
                </div>
+          </div> -->
+
+          <div class="containerAux" *ngFor="let column of collums">
+               <h2>{{ column.name }}</h2>
+               <ng-container  *ngFor="let task of tasksFiltradas">
+                    <div class="task" *ngIf="task.status === column.id">
+                         Titulo: {{ task.title }}<br>
+                         Data de vencimento: {{ task.date | date:"dd/MM/yyyy" }} <br>
+                         Descrição: {{ task.description | uppercase | slice: 0:5 }}
+                         <button (click)="selectedTask(task)"> Ver detalhes </button>
+                    </div>
+               </ng-container>
           </div>
      </section>
 

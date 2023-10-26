@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Task } from 'src/models/task.model';
 
 export interface iListTask{
@@ -13,6 +13,7 @@ export interface iListTask{
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @ViewChild("divSelect") detailDiv!: ElementRef;
 
   listTask: Task[] = [
     {
@@ -197,6 +198,11 @@ export class AppComponent {
 
   handleTask(task: Task){
     this.selectedTask = task;
+    setTimeout(() =>{
+      this.detailDiv.nativeElement.scrollIntoView({
+
+      })
+    })
   }
 
   fecharDetalhes(){

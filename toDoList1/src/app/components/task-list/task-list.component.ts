@@ -10,6 +10,11 @@ import { Task } from 'src/models/task.model';
 export class TaskListComponent implements OnInit{
  
   isVisible = true;
+  collums = [
+    { name: 'To Do', id: 'toDo'},
+    { name: 'In Progress', id: 'trabalhando' },
+    { name: 'Finalizado', id: 'finalizado'},
+  ];
 
   @Input() tasks: Task[] = [];
   @Output() handleTask = new EventEmitter();

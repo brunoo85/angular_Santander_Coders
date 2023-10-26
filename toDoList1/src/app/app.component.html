@@ -4,10 +4,13 @@
      (handleTask)="handleTask($event)"
      ></app-task-list>
 
-     <div *ngIf="selectedTask">
-          <app-task-detail
-               [task] = "selectedTask"
-               (closeDetail)="fecharDetalhes()"
-          ></app-task-detail>
+     <div #divSelect>
+          <div *ngIf="selectedTask">
+               <app-task-detail
+                    [task] = "selectedTask"
+                    (closeDetail)="fecharDetalhes()"
+               ></app-task-detail>
+          </div>
      </div>
+    
 </section>
