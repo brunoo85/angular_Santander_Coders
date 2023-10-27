@@ -46,11 +46,12 @@
                          Data de vencimento: {{ task.date | date:"dd/MM/yyyy" }} <br>
                          Descrição: {{ task.description | uppercase | slice: 0:5 }}
                          <button (click)="selectedTask(task)"> Ver detalhes </button>
+                         <br>
                     </div>
                </ng-container>
           </div>
      </section>
 
-     <button (click) = "mostrarLista()">Mostrar Lista</button>
+     <button class="btnTask" (click) = "mostrarLista()">Mostrar Lista</button>
 
 </section>
