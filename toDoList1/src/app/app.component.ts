@@ -188,6 +188,8 @@ export class AppComponent {
 
   selectedTask: Task | null = null;
 
+  listLogs: Task[] = [];
+
   ngOnInit(){
     console.log(this.selectedTask);
   }
@@ -198,6 +200,8 @@ export class AppComponent {
 
   handleTask(task: Task){
     this.selectedTask = task;
+    this.listLogs.push(task);
+    
     setTimeout(() =>{
       this.detailDiv.nativeElement.scrollIntoView({
 
@@ -208,4 +212,5 @@ export class AppComponent {
   fecharDetalhes(){
     this.selectedTask = null;
   }
+
 }

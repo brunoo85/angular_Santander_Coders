@@ -13,4 +13,5 @@ export class TaskDetailComponent {
   close(){
     this.closeDetail.emit();
   }
+
 }

@@ -1,11 +1,12 @@
-<section>
+<section class="details">
      <h2>Detalhes da Tarefa</h2>
 
-
-     <p>Titulo : {{ task.title }}</p>
-     <p>Descrição {{ task.description }}</p>
-     <p>Data de vencimento: {{ task.date | date : "dd/MM/yyyy" }}</p>
-     <p>Status: {{ task.status }}</p>
-
-     <button (click)="close()">Fechar</button>
+     <div>
+          <p><span>Titulo :</span> {{ task.title }}</p>
+          <p><span>Descrição :</span> {{ task.description }}</p>
+          <p><span>Data de vencimento:</span> {{ task.date | date : "dd/MM/yyyy" }}</p>
+          <p><span>Status:</span> {{ task.status }}</p>     
+          <button (click)="close()">Fechar</button> 
+     </div>
+     
 </section>

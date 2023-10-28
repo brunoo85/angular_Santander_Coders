@@ -1,0 +1,15 @@
+<div *ngIf="tasks.length>0 ">
+    <table>
+        <thead>
+          <tr><th>To Do</th><th>Trabalhando</th><th>Finalizado</th></tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.title }}</td>
+          <td>{{ task.description }}</td>
+          <td>{{ task.status }}</td>
+        </tr>
+        </tbody>
+      </table>
+    
+</div>

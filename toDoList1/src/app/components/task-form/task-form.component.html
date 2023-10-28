@@ -6,7 +6,7 @@
                <input id="title" type="text" name="title" formControlName="title">
           </div>
 
-          <div *ngIf="formTask.get('title')?.invalid && teste">
+          <div *ngIf="formTask.get('title')?.hasError('required')">
                <h2>Erro no Title</h2>
           </div>
 

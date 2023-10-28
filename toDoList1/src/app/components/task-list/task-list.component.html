@@ -1,7 +1,7 @@
 <section>
      <h2>Tarefas</h2>
      
-     <section class="container"  >
+     <section class="container" >
           <!-- <div class="containerAux">
                <h2>ToDo</h2>
                <div class="listTasks" *ngFor="let task of tasksFiltradas">
@@ -37,19 +37,22 @@
                     </div>
                </div>
           </div> -->
-
-          <div class="containerAux" *ngFor="let column of collums">
-               <h2>{{ column.name }}</h2>
-               <ng-container  *ngFor="let task of tasksFiltradas">
-                    <div class="task" *ngIf="task.status === column.id">
-                         Titulo: {{ task.title }}<br>
-                         Data de vencimento: {{ task.date | date:"dd/MM/yyyy" }} <br>
-                         Descrição: {{ task.description | uppercase | slice: 0:5 }}
-                         <button (click)="selectedTask(task)"> Ver detalhes </button>
-                         <br>
-                    </div>
-               </ng-container>
-          </div>
+          <ng-container *ngIf="isVisible">
+               <div class="containerAux" *ngFor="let column of collums">
+                    <h2>{{ column.name }}</h2>
+                    <ng-container  *ngFor="let task of tasksFiltradas">
+                         <div class="task" *ngIf="task.status === column.id">
+                              Titulo: {{ task.title }}<br>
+                              Data de vencimento: {{ task.date | date:"dd/MM/yyyy" }} <br>
+                              Descrição: {{ task.description | uppercase | slice: 0:5 }}
+                              <button (click)="selectedTask(task)"> Ver detalhes </button>
+                              
+                              <br>
+                         </div>
+                    </ng-container>
+               </div>
+          </ng-container>
+          
      </section>
 
      <button class="btnTask" (click) = "mostrarLista()">Mostrar Lista</button>

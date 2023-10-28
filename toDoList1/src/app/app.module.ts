@@ -7,6 +7,8 @@ import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskDetailComponent } from './components/task-detail/task-detail.component';
 import { TaskFiltroComponent } from './components/task-filtro/task-filtro.component';
 import { DateGreaterThanTodayDirective } from './directives/date-greater-than-today.directive';
+import { TaskTagsComponent } from './components/task-tags/task-tags.component';
+import { TaskLogComponent } from './components/task-log/task-log.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { DateGreaterThanTodayDirective } from './directives/date-greater-than-to
     TaskListComponent,
     TaskDetailComponent,
     TaskFiltroComponent,
-    DateGreaterThanTodayDirective
+    DateGreaterThanTodayDirective,
+    TaskTagsComponent,
+    TaskLogComponent,
   ],
   imports: [
     BrowserModule,
